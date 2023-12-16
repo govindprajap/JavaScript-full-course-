@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background changer</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #button{
+            padding: 16px;
+            font-size: 20px;
+            border-radius: 25px;
+            background-color: gray;
+            border: none;
+        }
+
+    </style>
+</head>
+<body>
+    <button id="button">Press Me</button>
+</body>
+<script>
+const btn = document.getElementById("button")
+function randomColor(){
+    let val = "0123456789ABCDEF"
+    let cons = "#"
+    for(let i = 0; i<6 ; i++){
+        cons = cons + val[Math.floor(Math.random() * 16)];
+    }
+    return cons;
+}
+function changeColor(){
+    document.body.style.backgroundColor = randomColor()
+}
+btn.addEventListener("click", changeColor)
+</script>
+</html>
